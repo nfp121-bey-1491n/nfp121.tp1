@@ -53,7 +53,7 @@ public class AuditeurCNAM {
         }
        else subNom=lowerNom;
        
-       String undersc="-";
+       String undersc="_";
        String lowerPrenom= prenom.toLowerCase();
        String subPrenom= lowerPrenom.substring(0,1);
        subPrenom.replaceAll("-","_");

@@ -13,4 +13,9 @@ comment3.text=\r\n\ Change\ this\ picture\ to\ black/white\ display\r\n
 comment4.params=
 comment4.target=void\ setColor()
 comment4.text=\r\n\ Change\ this\ picture\ to\ use\ color\ display\r\n
-numComments=5
+comment5.params=
+comment5.target=void\ setTerreEstFixe()
+comment6.params=
+comment6.target=void\ setTerreNonFixe()
+comment6.text=\r\n\ la\ terre\ n'est\ pas\ fixe\ \=>\ le\ soleil\ se\ leve.\r\n
+numComments=7

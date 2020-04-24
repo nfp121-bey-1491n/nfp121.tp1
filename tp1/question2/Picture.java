@@ -21,6 +21,8 @@ public class Picture {
     private Triangle roof;
     private Circle sun;
     private Circle sun2;
+    
+    private boolean TerreEstFixe;
 
     /**
      * Constructor for objects of class Picture
@@ -28,14 +30,6 @@ public class Picture {
     public Picture() {
         // nothing to do... instance variables are automatically set to null
     }
-    
-public void sunsetTerreFixe(){
-    sun.slowMoveVertical(100);
-}
-
-public void sunsetTerreNonfixe(){
-sun.slowMoveVertical(-100);
-}
 
     /**
      * Draw this picture.
@@ -60,18 +54,18 @@ sun.slowMoveVertical(-100);
 
         sun = new Circle();
         sun.changeColor("blue");
-        sun.moveHorizontal(180);
-        sun.moveVertical(-10);
+        sun.moveHorizontal(100);
+        sun.moveVertical(-20);
         sun.changeSize(60);
         sun.makeVisible();
         
-        /** le deuxime soleil jaune  **/
         sun2 = new Circle();
         sun2.changeColor("yellow");
-        sun2.moveHorizontal(110);
+        sun2.moveHorizontal(180);
         sun2.moveVertical(-10);
         sun2.changeSize(60);
         sun2.makeVisible();
+        
     }
 
     /**
@@ -84,6 +78,7 @@ sun.slowMoveVertical(-100);
             window.changeColor("white");
             roof.changeColor("black");
             sun.changeColor("black");
+            sun2.changeColor("black");
         }
     }
 
@@ -96,8 +91,27 @@ sun.slowMoveVertical(-100);
             wall.changeColor("red");
             window.changeColor("black");
             roof.changeColor("green");
-            sun.changeColor("yellow");
+            sun2.changeColor("yellow");
+            sun.changeColor("blue");
         }
     }
+    
+   public void setTerreEstFixe(){
+        if(!TerreEstFixe){
+            TerreEstFixe = true;
+            sun.slowMoveVertical(300);
+        }
+    }
+    
+    /**
+     * la terre n'est pas fixe => le soleil se leve.
+     */
+    
+    public void setTerreNonFixe(){
+        if(TerreEstFixe){
+            TerreEstFixe = false;
+            sun.slowMoveVertical(-300);
+        }
 
+}
 }
